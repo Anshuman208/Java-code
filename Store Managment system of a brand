@@ -1,0 +1,116 @@
+package store_maintain;
+import java.util.Scanner;
+public class store_management {
+    public static void main(String[] args) {
+        System.out.println("Welcome to woodland factory outlets");
+        System.out.println("Choose the number of store you want to give the account of month");
+        System.out.println("1- Agra" + '\n' + "2- Kanpur" + '\n' + "3- Bhopal" + '\n' + "4- Lucknow");
+        Scanner sc = new Scanner(System.in);
+        int loc = sc.nextInt();
+        if (loc == 1) {
+            System.out.println("Welcome owner of Agra store " + '\n' + "City of Taj");
+            System.out.println("Enter name of the month");
+            Scanner mn = new Scanner(System.in);
+            char month = mn.next().charAt(0);
+            System.out.println("Enter sale of thr month in number ");
+            Scanner sl = new Scanner(System.in);
+            int sale = sl.nextInt();
+            if (sale >= 1 && sale < 1000) {
+                System.out.println("Your store sale is " + sale + " which is very poor you will have to close the store");
+            } else if (sale >= 1000 && sale < 2500) {
+                System.out.println("Good Going Now enter the total money earned ");
+                Scanner rv = new Scanner(System.in);
+                int earn = rv.nextInt();
+                int revanue = earn * 25 / 100;
+                System.out.println("Your profit of the month " + month + " is " + revanue + " --Rupees");
+            } else {
+                System.out.println("Well done Now enter the total money earned ");
+                System.out.println("yor are eligible to get more stock now");
+                Scanner rv = new Scanner(System.in);
+                int earn = rv.nextInt();
+                int revanue = earn * 25 / 100;
+                System.out.println("Your profit of the month " + month + " is " + revanue + " --Rupees");
+            }
+        } else if (loc == 2) {
+
+            System.out.println("Welcome owner of Kanpur store ");
+            System.out.println("Enter name of the month");
+            Scanner mn = new Scanner(System.in);
+            char month = mn.next().charAt(0);
+            System.out.println("Enter sale of thr month in number ");
+            Scanner sl = new Scanner(System.in);
+            int sale = sl.nextInt();
+            if (sale >= 1 && sale < 1500) {
+                System.out.println("Your store sale is " + sale + " which is very poor you will have to close the store");
+            } else if (sale >= 1500 && sale < 3000) {
+                System.out.println("Good Going Now enter the total money earned ");
+                Scanner rv = new Scanner(System.in);
+                int earn = rv.nextInt();
+                int revanue = earn * 30 / 100;
+                System.out.println("Your profit of the month " + month + " is " + revanue + " --Rupees");
+            } else {
+                System.out.println("Well done Now enter the total money earned ");
+                System.out.println("yor are eligible to get more stock now");
+                Scanner rv = new Scanner(System.in);
+                int earn = rv.nextInt();
+                int revanue = earn * 30 / 100;
+                System.out.println("Your profit of the month " + month + " is " + revanue + " --Rupees");
+
+            }
+
+        } else if (loc == 3) {
+            System.out.println("Welcome owner of Bhopal store"+'\n'+"City of lakes");
+            System.out.println("Enter name of the month");
+            Scanner mn = new Scanner(System.in);
+            char month = mn.next().charAt(0);
+            System.out.println("Enter sale of thr month in number ");
+            Scanner sl = new Scanner(System.in);
+            int sale = sl.nextInt();
+            if (sale >= 1 && sale < 2500) {
+                System.out.println("Your store sale is " + sale + " which is very poor you will have to close the store");
+            } else if (sale >= 2500 && sale < 4500) {
+                System.out.println("Good Going Now enter the total money earned ");
+                Scanner rv = new Scanner(System.in);
+                int earn = rv.nextInt();
+                int revanue = earn * 32 / 100;
+                System.out.println("Your profit of the month " + month + " is " + revanue + " --Rupees");
+            } else {
+                System.out.println("Well done Now enter the total money earned ");
+                System.out.println("yor are eligible to get more stock now");
+                Scanner rv = new Scanner(System.in);
+                int earn = rv.nextInt();
+                int revanue = earn * 32 / 100;
+                System.out.println("Your profit of the month " + month + " is " + revanue + " --Rupees");
+            }
+        } else if (loc==4) {
+            System.out.println("Welcome owner of Lucknow store "+'\n'+"Mugal city");
+            System.out.println("Enter name of the month");
+            Scanner mn=new Scanner(System.in);
+            char month=mn.next().charAt(0);
+            System.out.println("Enter sale of thr month in number ");
+            Scanner sl=new Scanner(System.in);
+            int sale=sl.nextInt();
+            if (sale>=1 && sale<500){
+                System.out.println("Your store sale is "+sale+" which is very poor you will have to close the store");
+            } else if (sale>=500 && sale<1500) {
+                System.out.println("Good Going Now enter the total money earned ");
+                Scanner rv=new Scanner(System.in);
+                int earn= rv.nextInt();
+                int revanue=earn*20/100;
+                System.out.println("Your profit of the month "+month+" is "+revanue+" --Rupees");
+            }
+            else {
+                System.out.println("Well done Now enter the total money earned ");
+                System.out.println("yor are eligible to get more stock now");
+                Scanner rv = new Scanner(System.in);
+                int earn = rv.nextInt();
+                int revanue = earn * 20 / 100;
+                System.out.println("Your profit of the month " + month + " is " + revanue + " --Rupees");
+            }
+             }
+        else{
+            System.out.println("The number you entered is not available");
+        }
+        System.out.println("Thank-you....See you next month ");
+    }
+}
