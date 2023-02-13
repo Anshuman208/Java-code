@@ -1,0 +1,182 @@
+package store_maintain;
+import java.util.Scanner;
+public class Sales_items {
+    public static void main(String[] args) {
+        System.out.println("A-One mini mart");
+        System.out.println("We sell Only Fresh Items ");
+        System.out.println("Grab the offers ");
+        System.out.println("----------we have following item ------");
+        System.out.println("Your Daily needs are here  "+'\n'+"Juice"
+                +'\n'+"biscuits"+'\n'+"butter"+'\n'+"icecream"+'\n'+"bevrage");
+        System.out.println("Press Enter " +'\n'+"1- Shop"+'\n'+"2.Exit");
+        Scanner sc=new Scanner(System.in);
+        int product=sc.nextInt();
+                int Juice=12;
+                int biscuits=65;
+                int butter =5;
+                int icecream=12;
+                int bevrage=31;
+                int stock[]={12,65,5,12,31};
+
+
+
+                switch(product)
+                {
+                    case 1:
+                    {
+                        System.out.println("We are giving discount of 20% on these items because they are going to expire soon");
+                        System.out.println("Grab the limted offer of he store");
+                        if(Juice<=30)
+
+                        {
+                            System.out.println("* Juice");
+                        }
+                        if(biscuits<=30)
+                        {
+                            System.out.println("* biscuits");
+                        }
+                        if(butter<=30)
+                        {
+                            System.out.println("* butter");
+                        }
+                        if(icecream<=30)
+                        {
+                            System.out.println("* icecream");
+                        }
+                        if(bevrage<=30)
+                        {
+                            System.out.println("* bevrage");
+                        }
+
+                        System.out.println("Normal Items------Without discount");
+                        if(Juice>30)
+                        {
+
+                            System.out.println("* Juice");
+                        }
+                        if(biscuits>30)
+                        {
+                            System.out.println("* biscuits");
+                        }
+                        if(butter>30)
+                        {
+                            System.out.println("* butter");
+                        }
+                        if(icecream>30)
+                        {
+                            System.out.println("* icecream");
+                        }
+                        if(bevrage>30) {
+                            System.out.println("* bevrage");
+                        }
+                        System.out.println("choose the product "+'\n'+"1==> Juice"
+                                +'\n'+"2==>biscuits"+'\n'+"3==> butter"+'\n'+"4==>icecream"+'\n'+"5==>bevrage");
+                        Scanner s=new Scanner(System.in);
+                        int x=s.nextInt();
+                        int discout =20;
+                        switch(x)
+                        {
+                            case 1:
+                            {
+                                int cost=50;
+                                System.out.println("Juice");
+                                System.out.println("price of Juice is "+cost);
+                                System.out.println("number");
+                                Scanner a=new Scanner(System.in);
+                                int rat=a.nextInt();
+                                if(rat <=stock[0]){
+                                    stock[0]=stock[0]-rat;
+                                    discout=cost*discout/100;
+                                    System.out.println("Congrats you got discount on the item= "+discout);
+                                    cost=cost-discout;
+                                    cost=cost*rat;
+                                    System.out.println("Pay the amount="+cost);
+
+                                }
+                                else System.out.println("Stock is not sufficient");
+                                break;
+                            }
+                            case 2:
+                            {
+                                int cost=40;
+                                System.out.println(" Biscuit");
+                                System.out.println("price of bisuit is "+cost);
+                                System.out.println("number");
+                                Scanner a=new Scanner(System.in);
+                                int rat=a.nextInt();
+                                if(rat<=stock[1]){
+                                    stock[1]=stock[1]-rat;
+                                    cost=cost*rat;
+                                    System.out.println("Pay the amount="+cost);
+                                } else System.out.println("Stock is not sufficient");
+                                break;
+                            }
+                            case 3:
+                            {
+                                int cost=23;
+                                System.out.println("Butter");
+                                System.out.println("price of butter is "+cost);
+                                System.out.println("number");
+                                Scanner a=new Scanner(System.in);
+                                int rat=a.nextInt();
+                                if(rat<=stock[2]){
+                                    stock[2]=stock[2]-rat;
+                                    discout=cost*discout/100;
+                                    System.out.println("Congrats you got discount on the item = "+discout);
+                                    cost=cost-discout;
+                                    cost=cost*rat;System.out.println("Pay the amount="+cost);
+                                }
+                                else System.out.println("Stock is not sufficient");
+                                break;
+                            }
+                            case 4:
+                            {
+                                int cost=120;
+                                System.out.println("Icecream");
+                                System.out.println("price of the icecream "+cost);
+                                System.out.println("number");
+                                Scanner a=new Scanner(System.in);
+                                int rat=a.nextInt();
+                                if(rat<=stock[3]){
+                                    stock[3]=stock[3]-rat;
+                                    discout=cost*discout/100;
+                                    System.out.println("Congrats you got discount on the item = "+discout);
+                                    cost=cost-discout;
+                                    cost=cost*rat;
+                                    System.out.println("Pay the amount="+cost);
+                                } else System.out.println("Stock is not sufficient");
+                                break;
+                            }
+                            case 5:
+                            {
+                                int cost=90;
+                                System.out.println("you entered bevrage");
+                                System.out.println("price of bevrage is "+cost);
+                                System.out.println("enter the quantity");
+                                Scanner a=new Scanner(System.in);
+                                int rat =a.nextInt();
+                                if(rat<=stock[4]){
+                                    stock[4]=stock[4]-rat;
+                                    cost=cost*rat;
+                                    System.out.println("Pay the amount="+cost);
+                                }
+                                else System.out.println("Stock is not sufficient");
+                                break;
+                            }
+                            default:
+                            {
+                                System.out.println("you entered incorrect value");
+                                break;
+                            }
+                        }
+                        break;}
+                    case 2:
+                    {
+                        System.out.println("Thankyou Shop again ");
+                        System.out.println("visit Again");
+                    }
+
+                }
+
+            }
+        }
