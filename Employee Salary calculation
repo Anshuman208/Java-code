@@ -1,0 +1,49 @@
+package outlet_operate;
+import java.util.Scanner;
+public class EmployeeSalary {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter your basic pay: ");
+        double basicPay = input.nextDouble();
+        System.out.print("Enter your traveling allowance: ");
+        double travelingAllowance = input.nextDouble();
+        System.out.print("Enter your house rent allowance: ");
+        double houseRentAllowance = input.nextDouble();
+        System.out.print("Enter your medical allowance: ");
+        double medicalAllowance = input.nextDouble();
+
+        // Calculate total salary
+        double totalSalary = basicPay + travelingAllowance + houseRentAllowance + medicalAllowance;
+
+        // Calculate income tax
+        double incomeTax = 0;
+        if (totalSalary <= 200000) {
+            incomeTax = 0.05 * totalSalary;
+        } else if (totalSalary <= 500000) {
+            incomeTax = 0.10 * totalSalary;
+        } else {
+            incomeTax = 0.15 * totalSalary;
+        }
+
+        // Calculate source provided fund
+        System.out.print("Enter source provided fund: ");
+        double sourceProvidedFund = input.nextDouble();
+
+        // Calculate total deductions
+        double totalDeductions = incomeTax + sourceProvidedFund;
+
+        // Calculate net salary
+        double netSalary = totalSalary - totalDeductions;
+
+        System.out.println("Total Salary: " + totalSalary);
+        System.out.println("Income Tax: " + incomeTax);
+        System.out.println("Source Provided Fund: " + sourceProvidedFund);
+        System.out.println("Net Salary: " + netSalary);
+
+        // Donate something
+        System.out.print("Enter the amount you want to donate: ");
+        double donateAmount = input.nextDouble();
+        netSalary -= donateAmount;
+        System.out.println("Net Salary after donating " + donateAmount + ": " + netSalary);
+    }
+}
