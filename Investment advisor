@@ -1,0 +1,58 @@
+package outlet_operate;
+import java.util.Scanner;
+public class investment {
+    public static void main(String[] args) {
+        System.out.println("Welcome to Advance investment service");
+        System.out.println("We will suggest you best scheme to invest into. ");
+        System.out.println("select one ----"+'\n'+"1-Monthly salary"+'\n'+"2-Annual salary");
+        Scanner wy=new Scanner(System.in);
+        int way= wy.nextInt();
+        if (way==1){
+            System.out.println("Now enter your monthly income (in Thousand)");
+            Scanner sl=new Scanner(System.in);
+            int sal= sl.nextInt();
+            if (sal>=1 && sal<20000){
+                System.out.println("According to earning"+'\n'+"THE PMRPY scheme that will give you pension share of 8.33%");
+                double pf=sal*8.33/100;
+                double f=pf+sal;
+                System.out.println("You will get "+pf+" in one year...final will be= "+f+" INR");
+            } else if (sal>=20000 && sal<50000) {
+                System.out.println("Your income is good"+'\n'+"You can invest in"+'\n'+"Mutual funds will be the best option for you it will give you 13%-15%");
+                double pf=sal*14/100;
+                double f=pf+sal;
+                System.out.println("It will give you "+pf+" in one year....final will be= "+f+" INR");
+            }
+            else {
+                System.out.println("You have multiple option to invest "+'\n'+"Best option to invest is-- you can invest in Real state which will give you approx 13-19%");
+               double pf=sal*17/100;
+               double f=pf+sal;
+                System.out.println("It will give you approx "+pf+" rupees profit...final will be "+f+" INR");
+            }
+        } else if (way==2) {
+            System.out.println("Enter your Annual income(in Lakh)");
+            Scanner sl=new Scanner(System.in);
+            int sal= sl.nextInt();
+            if(sal>=1 && sal<3)
+            { System.out.println("According to earning"+'\n'+"THE PMRPY scheme that will give you pension share of 8.33%");
+                double pf=(sal*100000)*8.33/100;
+                double f=pf+(sal*100000);
+                System.out.println("You will get "+pf+" in one year...final will be= "+f+" INR");
+            } else if (sal>=3 && sal<7) {
+                System.out.println("Your income is good"+'\n'+"You can invest in"+'\n'+"Mutual funds will be the best option for you it will give you 13%-15%");
+                double pf=(sal*100000)*14/100;
+                double f=pf+(sal*100000);
+                System.out.println("It will give you "+pf+" in one year....final will be= "+f+" INR");
+            }
+            else {
+                System.out.println("You have multiple option to invest "+'\n'+"Best option to invest is-- you can invest in Real state which will give you approx 13-19%");
+                double pf=(sal*100000)*17/100;
+                double f=pf+(sal*100000);
+                System.out.println("It will give you approx "+pf+" rupees profit...final will be "+f+" INR");
+            }
+        } else {
+            System.out.println("Invalid input");
+
+        }
+        System.out.println("Thankyou ");
+    }
+}
