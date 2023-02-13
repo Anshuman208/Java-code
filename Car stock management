@@ -1,0 +1,73 @@
+package outlet_operate;
+
+import java.util.Scanner;
+public class comapny_stock {
+    public static void main(String[] args) {
+
+        System.out.println("Welcome To AM Toyota private limted");
+        System.out.println("We make relation bond");
+        System.out.println("--------Choose the Car -----");
+        System.out.println("1- Fortuner"+'\n'+"2- Innova"+'\n'+"3- Velfire"+'\n'+"4- Hycross ");
+        System.out.println("Enter the number car you want to buy");
+        Scanner sc=new Scanner(System.in);
+        int n= sc.nextInt();
+        if (n==1){
+            System.out.println("You Choose King of Suv 1- Fortuner");
+            System.out.println("Enter how many cars you want to buy ");
+            Scanner tc=new Scanner(System.in);
+                    int num1= tc.nextInt();
+                    if (num1>= 1 && num1<10) {
+                        System.out.println("Your car  price is ");
+                        System.out.println(num1 * 50+" Lakh+Tax");
+                    }
+                    else {
+                        System.out.println("Sorry Your demand is large we will get back to you soon");
+                    }
+        } else if (n==2) {
+            System.out.println("You Choose never ending 2- Innova ");
+            System.out.println("ENTER the number of car you want to buy");
+            Scanner lc= new Scanner(System.in);
+            int num2=lc.nextInt();
+            if(num2>=1 && num2<7){
+                System.out.println("You Car will cost you ");
+                System.out.println(num2*35+" Lakh+Tax");
+            }
+            else {
+                System.out.println("Stock is not enough We will get back to you soon");
+            }
+        }
+        else if (n==3){
+            System.out.println("you choose private jet on the road 3- Velfire");
+            System.out.println("Enter number you want to buy");
+            Scanner jet=new Scanner(System.in);
+            int num3= jet.nextInt();
+            if (num3>=1 && num3<5){
+                System.out.println("This Premium Car will Cost you");
+                System.out.println(num3*80+" Lakh+Taxes");
+            }
+            else {
+                System.out.println("Due to premium car we are short of stock you we will get back to you soon ");
+            }
+
+        } else if (n==4) {
+            System.out.println("You choose the most advance car 4-- Hycross");
+            System.out.println("Enter the number of cars ");
+            Scanner hy=new Scanner(System.in);
+            int num4= hy.nextInt();
+            if (num4>=1 && num4<21)
+            {
+                System.out.println("Welcome to the new tech_world Your bill will be");
+                System.out.println(num4*19+" Lakh+Tax");
+            }
+            else {
+                System.out.println("Out of Range will get back to you soon");
+            }
+        }
+        else
+        {
+            System.out.println("You  entered wrong value");
+        }
+
+
+    }
+}
