@@ -1,0 +1,56 @@
+package outlet_operate;
+
+import java.util.Scanner;
+
+public class Univer {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Don't BE confused we will suggest you best for MCA");
+        System.out.print("Enter the number of universities (maximum 5): ");
+        int numOfUniv = scanner.nextInt();
+
+        if (numOfUniv <= 0 || numOfUniv > 5) {
+            System.out.println("Invalid input. Number of universities should be between 1 and 5.");
+            return;
+        }
+
+        String[] univNames = new String[numOfUniv];
+        int[] univFees = new int[numOfUniv];
+        double[] univPlacementPercentages = new double[numOfUniv];
+        int[] univRankings = new int[numOfUniv];
+
+        for (int i = 0; i < numOfUniv; i++) {
+            System.out.println("\nEnter the details for university " + (i + 1) + ":");
+            System.out.print("University name: ");
+            univNames[i] = scanner.next();
+
+            System.out.print("Fees: ");
+            univFees[i] = scanner.nextInt();
+
+            System.out.print("Placement percentage: ");
+            univPlacementPercentages[i] = scanner.nextDouble();
+
+            System.out.print("Ranking: ");
+            univRankings[i] = scanner.nextInt();
+        }
+
+        int bestUnivIndex = getBestUniversityIndex(univFees, univPlacementPercentages, univRankings);
+
+        System.out.println("\nBased on the collected data, it is recommended that you should go for " + univNames[bestUnivIndex] + ".");
+    }
+
+    public static int getBestUniversityIndex(int[] fees, double[] placementPercentages, int[] rankings) {
+        int bestUnivIndex = 0;
+        double bestScore = 0.0;
+
+        for (int i = 0; i < fees.length; i++) {
+            double score = (100 - fees[i]) * placementPercentages[i] * (100 - rankings[i]);
+            if (score > bestScore) {
+                bestScore = score;
+                bestUnivIndex = i;
+            }
+        }
+
+        return bestUnivIndex;
+    }
+}
