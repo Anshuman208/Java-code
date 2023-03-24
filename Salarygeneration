@@ -1,0 +1,70 @@
+package outlet_operate;
+import java.util.Scanner;
+
+public class salarygen{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Is the chairman present? (yes/no): ");
+        String isChairmanPresent = scanner.next();
+
+        int basicSalary = 10000;
+
+        if (isChairmanPresent.equalsIgnoreCase("yes")) {
+            System.out.print("Enter the salary decided by the chairman: ");
+            basicSalary = scanner.nextInt();
+        }
+
+        Department[] departments = new Department[]{
+                new Department("Department 1", basicSalary),
+                new Department("Department 2", basicSalary),
+                new Department("Department 3", basicSalary),
+                new Department("Department 4", basicSalary)
+        };
+
+        for (Department dept : departments) {
+            System.out.println("\n" + dept.getName() + " Salary Details:");
+            System.out.println("------------------------");
+
+            System.out.println("Manager: " + dept.getManagerSalary());
+            System.out.println("Junior Managers : " + dept.getJuniorManagerSalary() );
+            System.out.println("Cashiers : " + dept.getCashierSalary() );
+            System.out.println("Peons : " + dept.getPeonSalary() );
+            System.out.println("Employees : " + dept.getEmployeeSalary() );
+        }
+    }
+}
+
+class Department {
+    private String name;
+    private int basicSalary;
+
+    public Department(String name, int basicSalary) {
+        this.name = name;
+        this.basicSalary = basicSalary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getManagerSalary() {
+        return basicSalary * 5;
+    }
+
+    public int getJuniorManagerSalary() {
+        return basicSalary * 4;
+    }
+
+    public int getCashierSalary() {
+        return basicSalary * 3;
+    }
+
+    public int getPeonSalary() {
+        return basicSalary;
+    }
+
+    public int getEmployeeSalary() {
+        return basicSalary * 2;
+    }
+}
